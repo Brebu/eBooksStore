@@ -338,13 +338,4 @@ public class eBooksStoreAdminEBooks extends HttpServlet {
         return "Servlet serves eBooksSoreAdminEBooks.JSP page";
     }// </editor-fold>
 
-    public static boolean isNumeric(String strNum) {
-        try {
-            double d = Double.parseDouble(strNum);
-        } catch (NumberFormatException | NullPointerException nfe) {
-            return false;
-        }
-        return true;
-    }
-
 }
