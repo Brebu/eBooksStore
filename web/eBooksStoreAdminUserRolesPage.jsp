@@ -16,7 +16,7 @@
         <link rel="icon" href=".\\img\\favicon.ico" type="image/x-icon"/>
     </head>
     <body>
-        <h1>Manage the roles from <span class="logoname"><span class="bre">BREx</span>BooksStore</span></h1>
+        <h1>Manage the roles from <span class="logoname"><span class="bre">BRE</span>BooksStore</span></h1>
         <%-- test if actual user is authenticated and authorized --%>
         <c:choose>
             <c:when test="${validUser == true}">   
