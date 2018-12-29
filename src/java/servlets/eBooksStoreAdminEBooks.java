@@ -74,7 +74,6 @@ public class eBooksStoreAdminEBooks extends HttpServlet {
                     pstmnt.setInt(5, Integer.parseInt(pages));
                     pstmnt.setInt(6, Integer.parseInt(id_genre));
                     pstmnt.setDouble(7, Double.parseDouble(price));
-
                     pstmnt.execute();
                 }
             } catch (ClassNotFoundException | SQLException ex) {
@@ -138,7 +137,7 @@ public class eBooksStoreAdminEBooks extends HttpServlet {
                     for (String s : selectedCheckboxes) {
                         // realize update of all selected rows
                         String isbn = s;
-                        if (!"".equals(title)) { // only password/s should be updated
+                        if (!"".equals(title)) { // only title should be updated
                             String DML = "UPDATE EBOOKS.EBOOKS SET isbn=?, title=? WHERE ISBN=?";
                             pstmnt = connection.prepareStatement(DML);
                             pstmnt.setString(1, isbn);
@@ -146,7 +145,7 @@ public class eBooksStoreAdminEBooks extends HttpServlet {
                             pstmnt.setString(3, isbn);
                             boolean execute = pstmnt.execute();
                         }
-                        if (!"".equals(pages)) { // only password/s should be updated
+                        if (!"".equals(pages)) { // only pages should be updated
                             String DML = "UPDATE EBOOKS.EBOOKS SET isbn=?, pages=? WHERE ISBN=?";
                             pstmnt = connection.prepareStatement(DML);
                             pstmnt.setString(1, isbn);
@@ -154,7 +153,7 @@ public class eBooksStoreAdminEBooks extends HttpServlet {
                             pstmnt.setString(3, isbn);
                             boolean execute = pstmnt.execute();
                         }
-                        if (!"".equals(price)) { // only password/s should be updated
+                        if (!"".equals(price)) { // only price should be updated
                             String DML = "UPDATE EBOOKS.EBOOKS SET isbn=?, price=? WHERE ISBN=?";
                             pstmnt = connection.prepareStatement(DML);
                             pstmnt.setString(1, isbn);
@@ -162,7 +161,7 @@ public class eBooksStoreAdminEBooks extends HttpServlet {
                             pstmnt.setString(3, isbn);
                             boolean execute = pstmnt.execute();
                         }
-                        if (!"".equals(type)) { // only password/s should be updated
+                        if (!"".equals(type)) { // only type should be updated
                             String DML = "UPDATE EBOOKS.EBOOKS SET isbn=?, id_type=? WHERE ISBN=?";
                             pstmnt = connection.prepareStatement(DML);
                             pstmnt.setString(1, isbn);
@@ -170,7 +169,7 @@ public class eBooksStoreAdminEBooks extends HttpServlet {
                             pstmnt.setString(3, isbn);
                             boolean execute = pstmnt.execute();
                         }
-                        if (!"".equals(quality)) { // only password/s should be updated
+                        if (!"".equals(quality)) { // only quality should be updated
                             String DML = "UPDATE EBOOKS.EBOOKS SET isbn=?, id_quality=? WHERE ISBN=?";
                             pstmnt = connection.prepareStatement(DML);
                             pstmnt.setString(1, isbn);
@@ -178,7 +177,7 @@ public class eBooksStoreAdminEBooks extends HttpServlet {
                             pstmnt.setString(3, isbn);
                             boolean execute = pstmnt.execute();
                         }
-                        if (!"".equals(genre)) { // only password/s should be updated
+                        if (!"".equals(genre)) { // only genre should be updated
                             String DML = "UPDATE EBOOKS.EBOOKS SET isbn=?, id_genre=? WHERE ISBN=?";
                             pstmnt = connection.prepareStatement(DML);
                             pstmnt.setString(1, isbn);
