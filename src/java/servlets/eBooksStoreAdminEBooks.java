@@ -237,6 +237,14 @@ public class eBooksStoreAdminEBooks extends HttpServlet {
                     // realize delete of all selected rows
                     String ssn = s;
                     String DML = "DELETE FROM EBOOKS.EBOOKS WHERE ISBN=?";
+                    String DML2 = "DELETE FROM EBOOKS.EBOOKS_RATINGS_USERS WHERE ID_ISBN=?";
+                    String DML3 = "DELETE FROM EBOOKS.EBOOKS_AUTHORS WHERE ID_ISBN=?";
+                    pstmnt = connection.prepareStatement(DML3);
+                    pstmnt.setString(1, ssn);
+                    pstmnt.execute();
+                    pstmnt = connection.prepareStatement(DML2);
+                    pstmnt.setString(1, ssn);
+                    pstmnt.execute();
                     pstmnt = connection.prepareStatement(DML);
                     pstmnt.setString(1, ssn);
                     pstmnt.execute();

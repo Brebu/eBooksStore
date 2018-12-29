@@ -221,6 +221,17 @@ public class eBooksStoreAdminUserRolesServlet extends HttpServlet {
                     for(String s : selectedCheckboxes){
                         // realize delete of all selected rows
                         String DML = "DELETE FROM EBOOKS.ROLES WHERE ROLE=?";
+                        String DML2 = "DELETE FROM EBOOKS.USERS  WHERE ROLE=?";
+                        String DML3 = "DELETE FROM EBOOKS.EBOOKS_RATINGS_USERS "
+                                + "WHERE ID_SSN IN (SELECT SSN FROM EBOOKS.USERS "
+                                + "INNER JOIN EBOOKS.ROLES ON EBOOKS.USERS.ROLE =EBOOKS.ROLES.ROLE "
+                                + "WHERE EBOOKS.USERS.ROLE=?)";
+                        pstmnt = connection.prepareStatement(DML3);
+                        pstmnt.setString(1, s);
+                        pstmnt.execute();
+                        pstmnt = connection.prepareStatement(DML2);
+                        pstmnt.setString(1, s);
+                        pstmnt.execute();
                         pstmnt = connection.prepareStatement(DML);
                         pstmnt.setString(1, s);
                         pstmnt.execute();
