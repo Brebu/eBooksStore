@@ -47,7 +47,7 @@ public class eBooksStoreAdminEBooks extends HttpServlet {
             // set connection paramters to the DB
             // read values from page fields
 
-            String isbn = request.getParameter("admin_ebooks_isbn");
+            String isbn = request.getParameter("admin_ebooks_isbn").replaceAll("\"", "'");
             String title = request.getParameter("admin_ebooks_title");
             String id_type = request.getParameter("admin_ebooks_id_type");
             String id_quality = request.getParameter("admin_ebooks_id_paper_qualities");

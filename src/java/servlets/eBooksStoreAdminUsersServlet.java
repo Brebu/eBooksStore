@@ -47,7 +47,7 @@ public class eBooksStoreAdminUsersServlet extends HttpServlet {
             if (request.getParameter("admin_users_insert") != null) { // insert values from fields
                 // set connection paramters to the DB
                 // read values from page fields
-                String ssn = request.getParameter("admin_users_ssn");
+                String ssn = request.getParameter("admin_users_ssn").replaceAll("\"", "'");
                 String username = request.getParameter("admin_users_username");
                 String user_password = request.getParameter("admin_users_password");
                 String role = request.getParameter("admin_user_role");

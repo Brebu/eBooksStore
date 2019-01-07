@@ -17,12 +17,7 @@ id  integer primary key,
 type varchar(25)
 );
 
-create table EBOOKS.USERS(
-SSN varchar(13) primary key,
-NAME varchar(25),
-PASSWORD varchar(25),
-ROLE varchar(10)
-);
+create table EBOOKS.USERS(SSN varchar(13) primary key,NAME varchar(25),PASSWORD varchar(25),ROLE varchar(10));
 
 create table EBOOKS.ROLES(
 ROLE varchar(10) primary key
@@ -117,8 +112,7 @@ values('1801010121122', 'Popa Andrei', 'iniandrei123','user');
 insert into EBOOKS.USERS(SSN, NAME, PASSWORD, ROLE)
 values('2800910121133', 'Popa Andra', 'iniandra123','user');
 
-insert into EBOOKS.USERS(SSN, NAME, PASSWORD, ROLE)
-values('1870130410057', 'admin', 'admin','admin');
+insert into EBOOKS.USERS(SSN, NAME, PASSWORD, ROLE)values('1870130410057', 'admin', 'admin','admin');
 
 insert into EBOOKS.USERS(SSN, NAME, PASSWORD, ROLE)
 values('2570923400695', 'user', 'user','user');

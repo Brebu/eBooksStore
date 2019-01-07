@@ -43,8 +43,8 @@ public class Index extends HttpServlet {
             throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         // read username and password sent from the JSP
-        String u = request.getParameter("authenticationpage_username");
-        String p = request.getParameter("authenticationpage_password");
+        String u = request.getParameter("authenticationpage_username").replaceAll("'", "");
+        String p = request.getParameter("authenticationpage_password").replaceAll("'", "");
         // Try to create a connection and test if the user exists
         // set connection paramters to the DB
         ResultSet resultSet = null;

@@ -48,7 +48,7 @@ public class eBooksStoreAdminUserRolesServlet extends HttpServlet {
             if (request.getParameter("admin_user_roles_insert") != null) { // insert values from fields
                 // set connection paramters to the DB
                 // read values from page fields
-                String role = request.getParameter("admin_user_roles_role");
+                String role = request.getParameter("admin_user_roles_role").replaceAll("\"", "'");
                 int ID = -1;
                 // declare specific variables
                 ResultSet resultSet = null;
